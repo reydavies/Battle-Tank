@@ -1,6 +1,7 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 #include "TankAimingComponent.h"
+#include "TankMovementComponent.h"
 #include "TankBarrel.h"
 #include "Projectile.h"
 #include "Tank.h"
@@ -12,7 +13,7 @@ ATank::ATank()
 	PrimaryActorTick.bCanEverTick = false;
 
 	// No need to protect points as added at construction
-	TankAimingComponent = CreateDefaultSubobject<UTankAimingComponent>(FName("Aiming Component"));
+	TankAimingComponent = CreateDefaultSubobject<UTankAimingComponent>(FName("Aiming Component"));	
 
 }
 
@@ -35,7 +36,7 @@ void ATank::BeginPlay()
 }
 
 // Called to bind functionality to input
-void ATank::SetupPlayerInputComponent(UInputComponent* InputComponent)
+void ATank::SetupPlayerInputComponent(class UInputComponent* InputComponent)
 {
 	Super::SetupPlayerInputComponent(InputComponent);
 
