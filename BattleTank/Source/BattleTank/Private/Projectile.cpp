@@ -4,6 +4,8 @@
 #include "Projectile.h"
 #include "Runtime/Engine/Classes/Particles/ParticleSystemComponent.h"
 
+class RadialForceComponent;
+
 // Sets default values
 AProjectile::AProjectile()
 {
@@ -25,6 +27,9 @@ AProjectile::AProjectile()
 	ImpactBlast->SetupAttachment(RootComponent);	
 	ImpactBlast->bAutoActivate = false;
 
+	ExplosionForce = CreateDefaultSubobject<URadialForceComponent>(FName("Explosion Force"));
+	ExplosionForce->SetupAttachment(RootComponent);
+
 }
 
 // Called when the game starts or when spawned
@@ -45,5 +50,6 @@ void AProjectile::OnHit(UPrimitiveComponent* HitComponent, AActor* OtherActor, U
 {
 	LaunchBlast->Deactivate();
 	ImpactBlast->Activate();
+	ExplosionForce->FireImpulse();
 }
 
