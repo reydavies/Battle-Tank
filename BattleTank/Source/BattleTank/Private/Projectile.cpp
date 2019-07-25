@@ -1,7 +1,7 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
-#include "Kismet/GameplayStatics.h"
 #include "Projectile.h"
+#include "Kismet/GameplayStatics.h"
 #include "Runtime/Engine/Classes/Particles/ParticleSystemComponent.h"
 
 class RadialForceComponent;
