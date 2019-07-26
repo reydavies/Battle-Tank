@@ -5,7 +5,6 @@
 #include "CoreMinimal.h"
 #include "GameFramework/ProjectileMovementComponent.h"
 #include "PhysicsEngine/RadialForceComponent.h" 
-#include "PhysicsEngine/RadialForceComponent.h" 
 #include "Components/StaticMeshComponent.h"
 #include "GameFramework/Actor.h"
 #include "Projectile.generated.h"
